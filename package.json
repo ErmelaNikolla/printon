@@ -14,11 +14,12 @@
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
         "postcss": "^8.5.6",
-        "tailwindcss": "^3.4.19",
+        "tailwindcss": "^4.2.1",
         "vite": "^7.0.7"
     },
     "dependencies": {
         "@inertiajs/vue3": "^2.3.17",
-        "vue": "^3.5.29"
+        "vue": "^3.5.29",
+        "ziggy-js": "^2.6.1"
     }
 }

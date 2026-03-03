@@ -35,9 +35,33 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+        $locale = session('locale', config('app.locale'));
+        if (in_array($locale, ['en', 'sq', 'fr'])) {
+            app()->setLocale($locale);
+        }
+        $locale = app()->getLocale();
+
         return [
             ...parent::share($request),
-            //
+            'locale'       => $locale,
+            'translations' => $this->loadTranslations($locale),
+            'auth'         => [
+                'user' => $request->user() ? ['id' => $request->user()->id, 'name' => $request->user()->name] : null,
+            ],
+            'flash' => [
+                'success' => session('success'),
+            ],
         ];
+    }
+
+    private function loadTranslations(string $locale): array
+    {
+        $path = lang_path("{$locale}/app.php");
+
+        if (file_exists($path)) {
+            return require $path;
+        }
+
+        return [];
     }
 }
