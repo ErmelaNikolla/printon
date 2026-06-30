@@ -3,6 +3,10 @@ dist
 dist-ssr
 *.local
 
+# Platform-specific lockfile breaks Linux CI (npm optional-deps bug) — let the
+# host run a fresh `npm install` instead. See npm/cli#4828.
+package-lock.json
+
 # Claude Code local settings
 .claude/settings.local.json
 
