@@ -1,59 +1,57 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# PrintOn
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Informational website for **PrintOn** — an advertising & printing studio in Tirana, Albania.
 
-## About Laravel
+Pure front-end: **Vue 3 + Vue Router + Vite + Tailwind CSS v4**. No backend, no database — every enquiry goes through phone, WhatsApp, or email.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Vue 3** (`<script setup>` SFCs)
+- **Vue Router 4** (history mode)
+- **Vite 7** (dev server + build)
+- **Tailwind CSS v4** (via `@tailwindcss/vite`)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Development
 
-## Learning Laravel
+```bash
+npm install
+npm run dev      # start the dev server
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## Build
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+npm run build    # outputs to dist/
+npm run preview  # preview the production build locally
+```
 
-## Laravel Sponsors
+The `dist/` folder is a fully static site — deploy it to any static host
+(Netlify, Vercel, GitHub Pages, Cloudflare Pages, or plain nginx/Apache).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+> **SPA routing note:** because the app uses history-mode routing, configure
+> your host to fall back to `index.html` for unknown paths (Netlify/Vercel do
+> this automatically; for nginx use `try_files $uri /index.html`).
 
-### Premium Partners
+## Structure
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```
+index.html            # Vite entry
+public/               # static assets served at site root (logos, favicon)
+src/
+  main.js             # app bootstrap
+  App.vue             # <RouterView>
+  router.js           # routes: /, /about, /contact
+  style.css           # Tailwind entry
+  Layouts/
+    PublicLayout.vue  # navbar + footer + Printon chat widget
+  Components/
+    ChatWidget.vue    # "Printon" chat → WhatsApp (client-side only)
+  pages/
+    Home.vue
+    About.vue
+    Contact.vue
+```
 
-## Contributing
+## Contact details
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Phone / WhatsApp: 069 899 2158 · Email: printon.reklama@gmail.com · Tirana, Albania
