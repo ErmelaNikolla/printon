@@ -11,26 +11,21 @@
             <img src="/logo/logo_Printon.svg" alt="PrintOn" class="h-7 w-auto" />
           </RouterLink>
 
-          <!-- Links -->
-          <div class="flex items-center gap-7">
-            <RouterLink
-              to="/"
-              class="text-gray-400 hover:text-white text-sm font-medium transition-colors hidden sm:block"
-            >
-              Home
-            </RouterLink>
-            <RouterLink
-              to="/about"
-              class="text-gray-400 hover:text-white text-sm font-medium transition-colors hidden sm:block"
-            >
-              About Us
-            </RouterLink>
-            <RouterLink
-              to="/contact"
-              class="text-gray-400 hover:text-white text-sm font-medium transition-colors hidden sm:block"
-            >
-              Contact
-            </RouterLink>
+          <!-- Right side -->
+          <div class="flex items-center gap-6 sm:gap-7">
+            <!-- Desktop text links -->
+            <div class="hidden sm:flex items-center gap-7">
+              <RouterLink to="/" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">
+                Home
+              </RouterLink>
+              <RouterLink to="/about" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">
+                About Us
+              </RouterLink>
+              <RouterLink to="/contact" class="text-gray-400 hover:text-white text-sm font-medium transition-colors">
+                Contact
+              </RouterLink>
+            </div>
+            <!-- CTA (always visible, incl. mobile) -->
             <RouterLink
               to="/contact"
               class="bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-5 py-1.5 rounded-full transition-colors"
@@ -120,9 +115,16 @@
 
       <!-- Bottom bar -->
       <div class="border-t border-white/[0.04]">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-700">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-700">
           <span>&copy; {{ year }} PrintOn. All rights reserved.</span>
-          <div class="text-4xl font-black text-white/[0.04] select-none tracking-tight leading-none">PrintOn</div>
+          <nav class="flex items-center gap-5">
+            <RouterLink to="/" class="hover:text-white transition-colors">Home</RouterLink>
+            <RouterLink to="/about" class="hover:text-white transition-colors">About Us</RouterLink>
+            <RouterLink to="/contact" class="hover:text-white transition-colors">Contact</RouterLink>
+          </nav>
+          <RouterLink to="/" class="inline-block">
+            <img src="/logo/logo_Printon.svg" alt="PrintOn" class="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+          </RouterLink>
         </div>
       </div>
     </footer>

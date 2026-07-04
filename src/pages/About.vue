@@ -25,13 +25,13 @@
 
         <!-- Stat card -->
         <div class="grid grid-cols-2 gap-4">
-          <div class="bg-gray-950 rounded-2xl p-6 flex flex-col justify-between aspect-square">
+          <div class="bg-gray-950 rounded-2xl p-6 flex flex-col justify-between items-center text-center aspect-square">
             <span class="text-xs font-semibold uppercase tracking-widest text-gray-500">In business since</span>
-            <span class="text-6xl font-black text-white leading-none">2024</span>
+            <span class="text-5xl sm:text-6xl font-black text-white leading-none">2024</span>
           </div>
-          <div class="bg-green-600 rounded-2xl p-6 flex flex-col justify-between aspect-square">
+          <div class="bg-green-600 rounded-2xl p-6 flex flex-col justify-between items-center text-center aspect-square">
             <span class="text-xs font-semibold uppercase tracking-widest text-green-200">Happy clients</span>
-            <span class="text-6xl font-black text-white leading-none">100<span class="text-3xl">+</span></span>
+            <span class="text-5xl sm:text-6xl font-black text-white leading-none">100<span class="text-3xl">+</span></span>
           </div>
           <div class="bg-stone-100 rounded-2xl p-6 col-span-2">
             <span class="text-xs font-semibold uppercase tracking-widest text-gray-400 block mb-2">Based in</span>
