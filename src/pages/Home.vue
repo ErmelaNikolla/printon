@@ -348,6 +348,15 @@
 <script setup>
 import PublicLayout from '@/Layouts/PublicLayout.vue';
 import Slideshow from '@/Components/Slideshow.vue';
+import { usePageSeo } from '@/seo';
+
+// SEO only (invisible): <title>, description, Open Graph, canonical
+usePageSeo({
+  title: 'PrintOn — Reklama & Printim në Tiranë | Shkronja 3D LED',
+  description:
+    'PrintOn – reklama, printim, shkronja 3D me LED, tabela, banera dhe ngjitëse në Tiranë. Printing, signage & 3D LED letters in Tirana, Albania.',
+  path: '/',
+});
 
 // ── WhatsApp link ──────────────────────────────────────
 const waLink = 'https://wa.me/355698992158?text=' + encodeURIComponent('Hello PrintOn! ');

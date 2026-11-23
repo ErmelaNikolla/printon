@@ -143,4 +143,12 @@
 
 <script setup>
 import PublicLayout from '@/Layouts/PublicLayout.vue';
+import { usePageSeo } from '@/seo';
+
+usePageSeo({
+  title: 'Contact PrintOn — Reklama & Printim, Rruga Sadik Petrela, Tiranë',
+  description:
+    'Contact PrintOn in Tirana: call or WhatsApp 069 899 2158, email printon.reklama@gmail.com. Rruga Sadik Petrela, Tiranë. Mon–Fri 09:00–18:00, Sat 10:00–14:00.',
+  path: '/contact',
+});
 </script>

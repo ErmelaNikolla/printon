@@ -88,6 +88,14 @@
 
 <script setup>
 import PublicLayout from '@/Layouts/PublicLayout.vue';
+import { usePageSeo } from '@/seo';
+
+usePageSeo({
+  title: 'About PrintOn — Advertising & Printing Studio in Tirana',
+  description:
+    'PrintOn is an advertising and printing studio in Tirana: signage, 3D LED letters, banners, stickers and branding for businesses across Albania.',
+  path: '/about',
+});
 
 const timeline = [
   {

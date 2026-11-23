@@ -7,7 +7,7 @@
         <img
           :key="current"
           :src="slides[current]"
-          alt=""
+          :alt="`Shkronja 3D me LED nga PrintOn, Tiranë – projekti ${current + 1}`"
           draggable="false"
           class="absolute inset-0 w-full h-full object-cover pointer-events-none"
         />

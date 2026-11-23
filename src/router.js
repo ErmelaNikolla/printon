@@ -1,26 +1,16 @@
-import { createRouter, createWebHistory } from 'vue-router';
 import Home from './pages/Home.vue';
 import About from './pages/About.vue';
 import Contact from './pages/Contact.vue';
 
-const routes = [
-  { path: '/', name: 'home', component: Home, meta: { title: 'PrintOn — Printing & Advertising in Tirana' } },
-  { path: '/about', name: 'about', component: About, meta: { title: 'About Us — PrintOn' } },
-  { path: '/contact', name: 'contact', component: Contact, meta: { title: 'Contact — PrintOn' } },
+// Every static route here is pre-rendered to its own HTML file by vite-ssg.
+// Page titles / meta live in each page via usePageSeo() (src/seo.js).
+export const routes = [
+  { path: '/', name: 'home', component: Home },
+  { path: '/about', name: 'about', component: About },
+  { path: '/contact', name: 'contact', component: Contact },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-  scrollBehavior() {
-    return { top: 0 };
-  },
-});
-
-// Set the browser tab / SEO title per page
-router.afterEach((to) => {
-  document.title = to.meta.title || 'PrintOn';
-});
-
-export default router;
+export function scrollBehavior() {
+  return { top: 0 };
+}
